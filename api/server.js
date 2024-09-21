@@ -40,7 +40,7 @@ app.get("/api", (req, res) => {
   res.json({ msg: "Hello" });
 });
 app.get("/api/submit-enquiry", (req, res) => {
-  res.json({ msg: "Enquiry Submit" });
+  res.status(200).json({ msg: "Enquiry Submit" });
 });
 
 app.post("/api/submit-enquiry", submitEnquiry);
