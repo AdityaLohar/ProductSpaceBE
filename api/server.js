@@ -39,12 +39,15 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/api", (req, res) => {
   res.json({ msg: "Hello" });
 });
+app.get("/api/submit-enquiry", (req, res) => {
+  res.json({ msg: "Enquiry Submit" });
+});
 
+app.post("/api/submit-enquiry", submitEnquiry);
+app.post("/api/formdata", submitEnquiry);
 app.options("/api/submit-enquiry", (req, res) => {
   res.sendStatus(200);
 });
-app.post("/api/submit-enquiry", submitEnquiry);
-app.post("/api/formdata", submitEnquiry);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
