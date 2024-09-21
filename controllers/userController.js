@@ -29,7 +29,7 @@ const submitEnquiry = async (req, res) => {
         }
 
     } catch (err) {
-        res.status(500).json({ error: err.message });
+        res.status(501).json({ error: err.message });
         console.log("Error in submit enquiry: ", err.message);
     }
 };
